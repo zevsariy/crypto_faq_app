@@ -1,0 +1,10 @@
+E:\ALL_LABS\ALL_LABS\ALL_LABS\bin\Debug\ALL_LABS.exe.config
+E:\ALL_LABS\ALL_LABS\ALL_LABS\bin\Debug\ALL_LABS.exe
+E:\ALL_LABS\ALL_LABS\ALL_LABS\bin\Debug\ALL_LABS.pdb
+E:\ALL_LABS\ALL_LABS\ALL_LABS\obj\Debug\ALL_LABS.fm.resources
+E:\ALL_LABS\ALL_LABS\ALL_LABS\obj\Debug\ALL_LABS.Properties.Resources.resources
+E:\ALL_LABS\ALL_LABS\ALL_LABS\obj\Debug\ALL_LABS.csproj.GenerateResource.Cache
+E:\ALL_LABS\ALL_LABS\ALL_LABS\obj\Debug\ALL_LABS.csproj.CoreCompileInputs.cache
+E:\ALL_LABS\ALL_LABS\ALL_LABS\obj\Debug\ALL_LABS.exe
+E:\ALL_LABS\ALL_LABS\ALL_LABS\obj\Debug\ALL_LABS.pdb
+E:\ALL_LABS\ALL_LABS\ALL_LABS\obj\Debug\ALL_LABS.csprojAssemblyReference.cache
