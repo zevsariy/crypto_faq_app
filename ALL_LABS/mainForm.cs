@@ -1,5 +1,6 @@
 ﻿using ALL_LABS.Algo;
 using ALL_LABS.Algo.MAGMA;
+using ALL_LABS.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace ALL_LABS
 {
     public partial class fm : Form
     {
+        public Log logger;
         public fm()
         {
             InitializeComponent();
+            logger = new Log(rtbLog);
         }
 
         private void buGenerateKey_Click(object sender, EventArgs e)
@@ -26,6 +29,8 @@ namespace ALL_LABS
 
         private void btEncrypt_Click(object sender, EventArgs e)
         {
+
+            logger.WriteLine($"{DateTime.Now} {cbALgoritm.Text}");
             switch (cbALgoritm.Text)
             {
                 case "MAGMA":
@@ -83,6 +88,7 @@ namespace ALL_LABS
 
         private void btDecrypt_Click(object sender, EventArgs e)
         {
+            logger.WriteLine($"{DateTime.Now} {cbALgoritm.Text}");
             switch (cbALgoritm.Text)
             {
                 case "MAGMA":
@@ -119,7 +125,7 @@ namespace ALL_LABS
                     break;
                 case "VIJENER_PSEUDO":
                     {
-                        if (txInputText.Text == "")
+                        if (txInputText.Text == "") 
                             MessageBox.Show("Введите данные для шифрования.");
                         else
                         {
@@ -129,6 +135,44 @@ namespace ALL_LABS
                     break;
                 default:
                     MessageBox.Show("Не выбран алгоритм");
+                    break;
+            }
+        }
+
+        private void cbALgoritm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var uri = AlgoWiki.UriDictionary[((ComboBox)sender).AccessibilityObject.Value];
+            webBrowser.Navigate(uri);
+            SetFormComponentsState(((ComboBox)sender).AccessibilityObject.Value);
+        }
+
+        private void SetFormComponentsState(string value)
+        {
+            switch (cbALgoritm.Text)
+            {
+                case "MAGMA":
+                    {
+                        txKey.Visible = true;
+                        laTxKey.Visible = true;
+                    }
+                    break;
+                case "CESAR":
+                    {
+                        txKey.Visible = false;
+                        laTxKey.Visible = false;
+                    }
+                    break;
+                case "VIJENER":
+                    {
+                        txKey.Visible = true;
+                        laTxKey.Visible = true;
+                    }
+                    break;
+                case "VIJENER_PSEUDO":
+                    {
+                        txKey.Visible = true;
+                        laTxKey.Visible = true;
+                    }
                     break;
             }
         }
